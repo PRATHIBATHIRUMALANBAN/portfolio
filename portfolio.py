@@ -58,10 +58,29 @@ def projects():
 def contact():
     st.title("Contact Me")
     st.write("You can reach me at prathiba.tmuthu@gmail.com.")
+def image():
+    st.title("project1")
+    st.image("Screenshot70.png")
+
+    st.title("project2")
+    st.image("screenshot1.png")
+    
+    st.image("Screenshot52.png")
+
+    st.image("Screenshot53.png")
+
+    st.image("Screenshot54.png")
+
+    st.image("Screenshot55.png")
+
+    st.image("Screenshot56.png")
+    
+
+
 
 # Set up the navigation bar
 st.sidebar.title("Navigation")
-options = st.sidebar.radio("Go to", ("Home", "About", "Projects", "Contact"))
+options = st.sidebar.radio("Go to", ("Home", "About", "Projects", "Contact","image"))
 
 # Route to the corresponding section based on the user selection
 if options == "Home":
@@ -72,18 +91,5 @@ elif options == "Projects":
     projects()
 elif options == "Contact":
     contact()
-from PIL import Image
-
-
-# Multiple file uploader
-uploaded_files = st.file_uploader("screenshoot1.py.png", accept_multiple_files=True, type=["png", "jpg", "jpeg"])
-
-# Display the uploaded images
-if uploaded_files:
-    st.write(f"Uploaded {len(uploaded_files)} image(s):")
-    for uploaded_file in uploaded_files:
-        # Open the image file
-        image = Image.open(uploaded_file)
-        # Display image
-        st.image(image, caption=uploaded_file.name, use_column_width=True)
-    
+elif options == "image":
+    image()
